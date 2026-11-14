@@ -78,20 +78,20 @@ src/main/resources/application*.properties
 
 Requisitos Funcionais:
 
-RF01 — Indicadores gerais de chamados técnicos
-RF02 — Análise de chamados atendidos por período (gráficos)
-RF03 — Situação dos chamados
-RF04 — Tipos de Chamados mais atendidos
-RF05 — Filtros de consulta 
-RF06 — Integração com a API 
-RF07 — Atualização e tratamento de dados 
+- RF01 — Indicadores gerais de chamados técnicos
+- RF02 — Análise de chamados atendidos por período (gráficos)
+- RF03 — Situação dos chamados
+- RF04 — Tipos de Chamados mais atendidos
+- RF05 — Filtros de consulta 
+- RF06 — Integração com a API 
+- RF07 — Atualização e tratamento de dados 
 
 Requisitos não funcionais:
-RNF01 — Desempenho
-RNF02 — Usabilidade
-RNF03 — Compatibilidade
-RNF04 — Segurança
-RNF05 — Integridade e consistência
-RNF06 — Tratamento de falhas
-RNF07 — Manutenibilidade
-RNF08 — Atualização
+- RNF01 — Desempenho
+- RNF02 — Usabilidade
+- RNF03 — Compatibilidade
+- RNF04 — Segurança
+- RNF05 — Integridade e consistência
+- RNF06 — Tratamento de falhas
+- RNF07 — Manutenibilidade
+- RNF08 — Atualização
