@@ -1,0 +1,423 @@
+/* Estilos adicionais para páginas com sidebar */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background-color: #343a40;
+    color: white;
+    height: 100vh;
+}
+
+#sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+#sidebar a:hover {
+    background-color: #495057;
+    color: white;
+}
+
+#sidebar .nav-item .submenu {
+    display: none;
+    padding-left: 1.5rem;
+}
+
+#sidebar .nav-item.open .submenu {
+    display: block;
+}
+
+#content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        height: 100%;
+        z-index: 1000;
+        transition: all 0.3s;
+    }
+
+    #sidebar.active {
+        left: 0;
+    }
+
+    #content {
+        margin-left: 0;
+    }
+
+    .toggle-btn {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1100;
+        cursor: pointer;
+    }
+}
+
+.dashboard {
+    max-width: 1600px;
+    color: #172033;
+}
+
+.dashboard-header,
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.dashboard-header {
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-header h1 {
+    margin: 0 0 .35rem;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 700;
+}
+
+.dashboard-eyebrow {
+    margin: 0 0 .4rem;
+    color: #5965d8;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+
+.dashboard-panel,
+.metric-card {
+    border: 1px solid #e8ebf2;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 3px 14px rgba(25, 39, 72, .04);
+}
+
+.dashboard-filters {
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+}
+
+.dashboard-filters .form-label {
+    margin-bottom: .35rem;
+    color: #586174;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.dashboard-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.metric-card {
+    min-height: 150px;
+    padding: 1.15rem 1.25rem;
+}
+
+.metric-card p {
+    margin: .8rem 0 .1rem;
+    color: #657084;
+    font-size: .88rem;
+}
+
+.metric-card strong {
+    display: block;
+    font-size: 1.8rem;
+    line-height: 1.3;
+}
+
+.metric-card small {
+    color: #8992a2;
+    font-size: .75rem;
+}
+
+.metric-icon {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border-radius: 10px;
+    background: #eef0ff;
+    color: #5965d8;
+    font-size: 1.1rem;
+}
+
+.metric-open {
+    background: #fff4e5;
+    color: #cc7a00;
+}
+
+.metric-progress {
+    background: #e8f4ff;
+    color: #1672b9;
+}
+
+.metric-done {
+    background: #e8f7ef;
+    color: #21814e;
+}
+
+.dashboard-charts,
+.dashboard-lower {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(280px, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dashboard-lower {
+    grid-template-columns: minmax(280px, .9fr) minmax(0, 1.6fr);
+}
+
+.chart-panel {
+    min-width: 0;
+    padding: 1.25rem;
+}
+
+.panel-heading {
+    margin-bottom: 1.25rem;
+}
+
+.panel-heading h2 {
+    margin: 0 0 .3rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.panel-heading p {
+    margin: 0;
+    color: #8992a2;
+    font-size: .8rem;
+}
+
+.chart-legend {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    color: #758096;
+    font-size: .75rem;
+    white-space: nowrap;
+}
+
+.chart-legend span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #646de0;
+}
+
+.chart-legend .legend-attended {
+    margin-left: .5rem;
+    background: #37a879;
+}
+
+.chart-legend .legend-received {
+    background: #646de0;
+}
+
+.daily-chart {
+    display: grid;
+    grid-auto-columns: minmax(12px, 1fr);
+    grid-auto-flow: column;
+    align-items: end;
+    gap: .3rem;
+    min-height: 185px;
+    overflow-x: auto;
+    padding: 1rem .2rem 0;
+    border-bottom: 1px solid #e9edf3;
+}
+
+.daily-column {
+    display: flex;
+    height: 100%;
+    min-height: 150px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: .45rem;
+}
+
+.daily-bar {
+    width: min(45%, 14px);
+    min-height: 3px;
+    border-radius: 5px 5px 0 0;
+    background: linear-gradient(180deg, #858cf0, #5965d8);
+}
+
+.daily-bar.received {
+    background: linear-gradient(180deg, #858cf0, #5965d8);
+}
+
+.daily-bar.attended {
+    background: linear-gradient(180deg, #62c79b, #27966a);
+}
+
+.daily-bars {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+}
+
+.daily-value,
+.daily-label {
+    color: #8992a2;
+    font-size: .63rem;
+    white-space: nowrap;
+}
+
+.daily-value {
+    min-height: .8rem;
+    color: #525d73;
+}
+
+.distribution-chart {
+    display: grid;
+    gap: 1rem;
+}
+
+.distribution-item {
+    display: grid;
+    grid-template-columns: minmax(70px, 1fr) minmax(60px, 2fr) auto;
+    align-items: center;
+    gap: .65rem;
+    font-size: .78rem;
+}
+
+.distribution-name {
+    overflow: hidden;
+    color: #586174;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.distribution-track {
+    height: 8px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f0f2f7;
+}
+
+.distribution-fill {
+    height: 100%;
+    min-width: 2px;
+    border-radius: inherit;
+    background: #6872df;
+}
+
+.distribution-count {
+    min-width: 1.2rem;
+    color: #505b70;
+    text-align: right;
+    font-weight: 600;
+}
+
+.recent-tickets {
+    display: grid;
+    gap: .8rem;
+}
+
+.recent-ticket {
+    padding: .8rem .9rem;
+    border: 1px solid #edf0f5;
+    border-radius: 9px;
+    background: #fcfcfe;
+}
+
+.recent-ticket-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .75rem;
+}
+
+.recent-ticket-title {
+    margin: 0;
+    font-size: .85rem;
+    font-weight: 650;
+}
+
+.recent-ticket-meta,
+.recent-ticket-notes {
+    margin: .35rem 0 0;
+    color: #7a8497;
+    font-size: .75rem;
+}
+
+.recent-ticket-notes strong {
+    color: #596174;
+}
+
+.ticket-status {
+    padding: .2rem .5rem;
+    border-radius: 20px;
+    background: #eef0ff;
+    color: #535fc6;
+    font-size: .68rem;
+    white-space: nowrap;
+}
+
+.dashboard-empty {
+    padding: 1rem 0;
+    color: #8992a2;
+    font-size: .82rem;
+}
+
+.dashboard-chart-note {
+    margin: .75rem 0 0;
+    color: #8992a2;
+    font-size: .72rem;
+}
+
+.dashboard-updated {
+    padding: .4rem 0 1rem;
+    font-size: .75rem;
+    text-align: right;
+}
+
+@media (max-width: 992px) {
+    .dashboard-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-charts,
+    .dashboard-lower {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-header {
+        align-items: flex-start;
+    }
+
+    .dashboard-header .btn {
+        padding: .4rem .55rem;
+        font-size: .8rem;
+        white-space: nowrap;
+    }
+
+    .metric-card {
+        min-height: 138px;
+        padding: .9rem;
+    }
+
+    .metric-card strong {
+        font-size: 1.5rem;
+    }
+}
